@@ -1,0 +1,13 @@
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# Primer backups are regenerated on every update-primer run — no need to version them
+primer/backups/*
+!primer/backups/.gitkeep
+
+# Transcripts are raw exports of your conversations. They can be long and can
+# contain anything you discussed. Uncomment the next line to keep them out of git
+# (the primer itself still records what you learned from them).
+# primer/transcripts/*.md
+# !primer/transcripts/README.md
