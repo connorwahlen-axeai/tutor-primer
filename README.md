@@ -47,7 +47,7 @@ markers is yours and is never touched.
 Use this repo as a GitHub template, or clone it:
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/learning-primer.git my-primer && cd my-primer
+git clone https://github.com/connorwahlen-axeai/tutor-primer.git my-primer && cd my-primer
 ```
 
 Then point it at your own remote so your primer syncs across machines (optional — a purely
