@@ -174,7 +174,7 @@ it flags it in the report and leaves the decision to you.
 │   ├── learning-context.md  # the primer itself — this is the file you edit
 │   ├── transcripts/         # drop exported conversations here
 │   └── backups/             # automatic, gitignored
-├── verification test/       # record of the tool verified from a clean clone
+├── verification-test/       # record of the tool verified from a clean clone
 └── scripts/sync-skills.sh
 ```
 
@@ -223,7 +223,7 @@ every session, including ones that have nothing to do with learning.
 
 ## Verification
 
-The [`verification test/`](verification%20test/) folder holds a full record of the tool
+The [`verification-test/`](verification-test/) folder holds a full record of the tool
 being exercised from a clean clone: skill and slash-command discovery, `/begin-tutor` and
 `/update-primer` end to end, `--dry-run` proven to write nothing, and the `--apply` write
 path checked for backup, commit, and marker discipline. It also covers the no-remote and
