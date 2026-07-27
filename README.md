@@ -42,6 +42,28 @@ Two skills, one document. Everything the tool writes lives between
 `<!-- ...:auto:start -->` / `<!-- ...:auto:end -->` markers. Everything outside those
 markers is yours and is never touched.
 
+## Quickstart
+
+The whole path, start to finish. Each step below was run against a clean clone and
+verified — see [Verification](#verification).
+
+```bash
+git clone https://github.com/connorwahlen-axeai/tutor-primer.git my-primer
+cd my-primer
+```
+
+1. Fill in the `[TODO]` placeholders in Sections 1, 3, and 4 of
+   `primer/learning-context.md`. (Details under [Install](#install).)
+2. Open the folder in Claude Code or opencode and run `/begin-tutor`.
+3. Have your session.
+4. Save the conversation into `primer/transcripts/`.
+5. Run `/update-primer --dry-run` to see what would change, then re-run without
+   `--dry-run` to apply it.
+
+**No configuration is required.** There is no `opencode.json` to write and no settings to
+change — the skills and slash commands are picked up straight from the clone. A remote is
+optional, and the tool also works from a plain ZIP download with no git repository at all.
+
 ## Install
 
 Use this repo as a GitHub template, or clone it:
@@ -152,6 +174,7 @@ it flags it in the report and leaves the decision to you.
 │   ├── learning-context.md  # the primer itself — this is the file you edit
 │   ├── transcripts/         # drop exported conversations here
 │   └── backups/             # automatic, gitignored
+├── verification test/       # record of the tool verified from a clean clone
 └── scripts/sync-skills.sh
 ```
 
@@ -197,6 +220,17 @@ anything. Add an `opencode.json` at the repo root:
 This is off by default. `begin-tutor` loads the primer deliberately and gives you an
 orientation summary, which is usually what you want; always-on loading spends context on
 every session, including ones that have nothing to do with learning.
+
+## Verification
+
+The [`verification test/`](verification%20test/) folder holds a full record of the tool
+being exercised from a clean clone: skill and slash-command discovery, `/begin-tutor` and
+`/update-primer` end to end, `--dry-run` proven to write nothing, and the `--apply` write
+path checked for backup, commit, and marker discipline. It also covers the no-remote and
+no-git-at-all cases.
+
+Everything there was run on opencode's free models with no credentials configured, which
+is why the [Quickstart](#quickstart) can promise that a recipient needs no setup.
 
 ## Notes
 
